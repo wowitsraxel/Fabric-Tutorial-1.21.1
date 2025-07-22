@@ -21,6 +21,7 @@ public class ChiselItem extends Item {
     private static final Map<Block, Block> CHISEL_MAP =
             Map.of(
                     Blocks.STONE, Blocks.STONE_BRICKS,
+                    Blocks.STONE_BRICKS, Blocks.STONE,
                     Blocks.END_STONE, Blocks.END_STONE_BRICKS,
                     Blocks.OAK_LOG, ModBlocks.PINK_GARNET_BLOCK,
                     Blocks.GOLD_BLOCK, Blocks.NETHERITE_BLOCK
@@ -49,15 +50,16 @@ public class ChiselItem extends Item {
         return ActionResult.SUCCESS;
     }
 
-    @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+//    @Override
+//    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+//
+//        double bounceHeight = 0.5;
+//
+//        if (attacker.getVelocity().y < -0.1) {
+//            target.setVelocity(0.0, bounceHeight, 0.0);
+//        }
+//
+//        return super.postHit(stack, target, attacker);
+//    }
 
-        if (target.isOnGround()) {
-            target.setVelocity(0.0, 1.0, 0.0);
-        } else {
-            target.setVelocity(0.0, 0.5, 0.0);
-        }
-
-        return super.postHit(stack, target, attacker);
-    }
 }
